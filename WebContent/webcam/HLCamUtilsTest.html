@@ -4,6 +4,12 @@
 <script type="text/javascript" >
 	var WEBCAMUTIL 	= null;
 	
+	function clearCaptured()
+	{
+		var imgCaptured = document.getElementById("imgCaptured");
+		imgCaptured.removeAttribute('src');
+	}
+	
 	function setVideoSize(w, h)
 	{
 		var vid 	= document.getElementById("videoElement");
@@ -37,10 +43,8 @@
 <BODY>
 	<table>
 		<tr>
-			<td colspan="2">
-				<img id="imgCaptured" style="display:none;"/>
-				<video id="videoElement" width='320' height='240' muted autoplay></video>
-			</td>
+			<td><video id="videoElement" width='320' height='240' muted autoplay></video></td>
+			<td><img id="imgCaptured"/></td>
 		</tr>
 		<tr>
 			<td colspan="2">
@@ -57,7 +61,7 @@
 		
 	</table>
 	
-	<input type="button" onclick="" value="Clear">
+	<input type="button" onclick="clearCaptured();" value="Clear">
 	
 </BODY>
 </HTML>
